@@ -41,7 +41,7 @@ public:
     {
       cout << "\tPlease Select a Car" << endl;
       cout << "\tEnter 'A' for Ferrari 2022." << endl;
-      cout << "\ttEnter 'B' for Hyundai Creta 2019." << endl;
+      cout << "\tEnter 'B' for Hyundai Creta 2019." << endl;
       cout << "\tEnter 'C' for Ford 2019." << endl;
       cout << "\tEnter 'D' for Alto-800." << endl;
       cout << "\tEnter 'E' for Swift Dzire." << endl;
