@@ -7,16 +7,16 @@
 #include <iomanip>
 
 using namespace std;
-
+void login();
 string global_username;
 
 class customer
 {
 private:
 public:
-  string customername;
-  string carmodel;
-  string carnumber;
+  string customerName;
+  string carModel;
+  string carNumber;
   char data;
 };
 
@@ -24,17 +24,20 @@ class rent : public customer
 {
 public:
   int days = 0, rentalfee = 0;
+  
   void data()
   {
-    void login();
+    
     login();
     cout << "\t\t\tUsername: " << global_username << endl
          << endl
          << endl;
     cout << "\tPlease Enter your Name: ";
-    cin >> customername;
+    cin >> customerName;
+
     ofstream fp("data.txt", ios::app);
-    fp << customername << ", ";
+    fp << customerName << ", ";
+    // fp.close();
 
     cout << endl;
     do
@@ -49,10 +52,10 @@ public:
       cout << "\tEnter 'G' for Innova Traveller." << endl;
       cout << endl;
       cout << "\tChoose a Car from the above options: ";
-      cin >> carmodel;
+      cin >> carModel;
       cout << endl;
       cout << "--------------------------------------------------------------------------" << endl;
-      if (carmodel == "A")
+      if (carModel == "A")
       {
         system("CLS");
         cout << "\t\t\tUsername: " << global_username << endl
@@ -64,11 +67,13 @@ public:
 
         string carname = "Ferrari model 2022, ";
 
-        ofstream fp("data.txt", ios::app);
+        // ofstream fp("data.txt", ios::app);
         fp << carname;
+            // fp.close();
+
         sleep(2);
       }
-      if (carmodel == "B")
+      if (carModel == "B")
       {
         system("CLS");
         cout << "\t\t\tUsername: " << global_username << endl
@@ -82,10 +87,12 @@ public:
         ofstream fp("data.txt", ios::app);
 
         fp << carname;
+            fp.close();
+
 
         sleep(2);
       }
-      if (carmodel == "C")
+      if (carModel == "C")
       {
         system("CLS");
         cout << "\t\t\tUsername: " << global_username << endl
@@ -98,10 +105,12 @@ public:
 
         ofstream fp("data.txt", ios::app);
         fp << carname;
+            fp.close();
+
 
         sleep(2);
       }
-      if (carmodel == "D")
+      if (carModel == "D")
       {
         system("CLS");
         cout << "\t\t\tUsername: " << global_username << endl
@@ -117,7 +126,7 @@ public:
 
         sleep(2);
       }
-      if (carmodel == "E")
+      if (carModel == "E")
       {
         system("CLS");
         cout << "\t\t\tUsername: " << global_username << endl
@@ -130,10 +139,11 @@ public:
 
         ofstream fp("data.txt", ios::app);
         fp << carname;
+    fp.close();
 
         sleep(2);
       }
-      if (carmodel == "F")
+      if (carModel == "F")
       {
         system("CLS");
         cout << "\t\t\tUsername: " << global_username << endl
@@ -146,10 +156,11 @@ public:
 
         ofstream fp("data.txt", ios::app);
         fp << carname;
+    fp.close();
 
         sleep(2);
       }
-      if (carmodel == "G")
+      if (carModel == "G")
       {
         system("CLS");
         cout << "\t\t\tUsername: " << global_username << endl
@@ -162,28 +173,33 @@ public:
 
         ofstream fp("data.txt", ios::app);
         fp << carname;
+    fp.close();
 
         sleep(2);
       }
-      if (carmodel != "A" && carmodel != "B" && carmodel != "C" && carmodel != "D" && carmodel != "E" && carmodel != "F" && carmodel != "G")
+      if (carModel != "A" && carModel != "B" && carModel != "C" && carModel != "D" && carModel != "E" && carModel != "F" && carModel != "G")
 
         cout << "Invaild Car Model. Please try again!" << endl;
-    } while (carmodel != "A" && carmodel != "B" && carmodel != "C" && carmodel != "D" && carmodel != "E" && carmodel != "F" && carmodel != "G");
+    } while (carModel != "A" && carModel != "B" && carModel != "C" && carModel != "D" && carModel != "E" && carModel != "F" && carModel != "G");
+   
     // ofstream fp("data.txt", ios::app);
-    // fp << customername<<", ";
+    // fp << customerName<<", ";
+    // ofstream fp("data.txt", ios::app);
 
     cout << "--------------------------------------------------------------------------" << endl;
     cout << "Please provide following information: " << endl;
 
     cout << "How many cars do you wish to rent (Car Number) : ";
-    cin >> carnumber;
+    cin >> carNumber;
 
-    fp << carnumber << ", ";
+    fp << carNumber << ", ";
 
     cout << "Number of days you wish to rent the car : ";
     cin >> days;
     fp << days;
     cout << endl;
+        fp.close();
+
   }
   void calculate()
   {
@@ -192,19 +208,19 @@ public:
 
     cout << "Calculating rent. Please wait......" << endl;
     sleep(2);
-    if (carmodel == "A" || carmodel == "a")
+    if (carModel == "A" || carModel == "a")
       rentalfee = days * 56;
-    if (carmodel == "B" || carmodel == "b")
+    if (carModel == "B" || carModel == "b")
       rentalfee = days * 60;
-    if (carmodel == "C" || carmodel == "c")
+    if (carModel == "C" || carModel == "c")
       rentalfee = days * 75;
-    if (carmodel == "D" || carmodel == "d")
+    if (carModel == "D" || carModel == "d")
       rentalfee = days * 80;
-    if (carmodel == "E" || carmodel == "e")
+    if (carModel == "E" || carModel == "e")
       rentalfee = days * 85;
-    if (carmodel == "F" || carmodel == "F")
+    if (carModel == "F" || carModel == "F")
       rentalfee = days * 70;
-    if (carmodel == "G" || carmodel == "g")
+    if (carModel == "G" || carModel == "g")
       rentalfee = days * 100;
     ofstream fp("data.txt", ios::app);
     fp << ", rental fee is " << rentalfee << endl;
@@ -217,11 +233,11 @@ public:
          << "------------------|" << setw(10) << "#Cnb81353"
          << " |" << endl;
     cout << "	| Customer Name:"
-         << "-----------------|" << setw(10) << customername << " |" << endl;
+         << "-----------------|" << setw(10) << customerName << " |" << endl;
     cout << "	| Car Model :"
-         << "--------------------|" << setw(10) << carmodel << " |" << endl;
+         << "--------------------|" << setw(10) << carModel << " |" << endl;
     cout << "	| Car No. :"
-         << "----------------------|" << setw(10) << carnumber << " |" << endl;
+         << "----------------------|" << setw(10) << carNumber << " |" << endl;
     cout << "	| Number of days :"
          << "---------------|" << setw(10) << days << " |" << endl;
     cout << "	| Your Rental Amount is :"
